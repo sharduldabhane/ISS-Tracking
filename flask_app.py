@@ -20,7 +20,7 @@ def get_space_station_location():
     space_station_longitude = None
     space_station_latitude = None
     try:
-        r = requests.get(url='http://api.open-notify.org/iss-now.json')
+        r = requests.get(url='http://api.open-notify.org/iss-now.json', timeout=60)
         space_station_location = (r.json())
 
         space_station_longitude = float(space_station_location['iss_position']['longitude'])
